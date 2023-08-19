@@ -1,0 +1,70 @@
+paths:
+  /api/users/premium/{uid}:
+    patch:
+      summary: Update user role to "PREMIUM"
+      tags:
+        - Users
+      parameters:
+        - name: uid
+          in: path
+          description: User's email address
+          required: true
+          schema:
+            type: string
+            format: email
+      responses:
+        '200':
+          description: User role updated successfully
+        '400':
+          description: Bad request. Invalid route.
+        '404':
+          description: User not found in the database.
+        '500':
+          description: Internal server error.
+
+  /api/users/user/{uid}:
+    patch:
+      summary: Update user role to "USER"
+      tags:
+        - Users
+      parameters:
+        - name: uid
+          in: path
+          description: User's email address
+          required: true
+          schema:
+            type: string
+            format: email
+      responses:
+        '200':
+          description: User role updated successfully
+        '400':
+          description: Bad request. Invalid route.
+        '404':
+          description: User not found in the database.
+        '500':
+          description: Internal server error.
+
+components:
+  schemas:
+    User:
+      type: object
+      properties:
+        first_name:
+          type: string
+        last_name:
+          type: string
+        email:
+          type: string
+          format: email
+        age:
+          type: number
+        password:
+          type: string
+        role:
+          type: string
+
+  examples:
+    UserExample:
+      value:
+        email: john.doe@example.com

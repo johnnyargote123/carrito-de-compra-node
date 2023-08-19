@@ -1,0 +1,261 @@
+openapi: 3.0.0
+info:
+  title: Router API
+  version: 1.0.0
+paths:
+  /api/carts:
+    get:
+      summary: Get all carts
+      description: Retrieve a list of all carts.
+      tags:
+        - Carts
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CartArray'
+              example:
+                - _id: cart1
+                  products: []
+                - _id: cart2
+                  products:
+                    - product: product1
+                      quantity: 3
+    post:
+      summary: Create a new cart
+      description: Create a new cart.
+      tags:
+        - Carts
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+            example:
+              {}
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Cart'
+              example:
+                _id: cart1
+                products: []
+  /api/carts/{id}:
+    get:
+      summary: Get a specific cart by ID
+      description: Retrieve a specific cart by its ID.
+      tags:
+        - Carts
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Cart'
+              example:
+                _id: cart1
+                products:
+                  - product: product1
+                    quantity: 3
+    delete:
+      summary: Delete a cart by ID
+      description: Delete a specific cart by its ID.
+      tags:
+        - Carts
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+  /api/carts/{cid}/product/{pid}:
+    post:
+      summary: Add a product to a cart
+      description: Add a product to a specific cart.
+      tags:
+        - Carts
+      parameters:
+        - in: path
+          name: cid
+          required: true
+          schema:
+            type: string
+        - in: path
+          name: pid
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AddProductToCartRequest'
+            example:
+              quantity: 5
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Cart'
+              example:
+                _id: cart1
+                products:
+                  - product: product1
+                    quantity: 3
+    put:
+      summary: Update the quantity of a product in a cart
+      description: Update the quantity of a product in a specific cart.
+      tags:
+        - Carts
+      parameters:
+        - in: path
+          name: cid
+          required: true
+          schema:
+            type: string
+        - in: path
+          name: pid
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateProductQuantityRequest'
+            example:
+              quantity: 5
+      responses:
+        '200':
+          description: OK
+  /api/carts/{cid}/purchase:
+    post:
+      summary: Purchase a cart
+      description: Purchase the products in a specific cart.
+      tags:
+        - Carts
+      parameters:
+        - in: path
+          name: cid
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PurchaseResponse'
+              example:
+                ticket: ticket1
+                failedProducts: []
+  /api/carts/{cid}/products/{pid}:
+    delete:
+      summary: Remove a product from a cart
+      description: Remove a product from a specific cart.
+      tags:
+        - Carts
+      parameters:
+        - in: path
+          name: cid
+          required: true
+          schema:
+            type: string
+        - in: path
+          name: pid
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+    put:
+      summary: Update a cart
+      description: Update a specific cart.
+      tags:
+        - Carts
+      parameters:
+        - in: path
+          name: cid
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateCartRequest'
+            example:
+              products:
+                - product: product1
+                  quantity: 3
+      responses:
+        '200':
+          description: OK
+          
+components:
+  schemas:
+    CartArray:
+      type: array
+      items:
+        $ref: '#/components/schemas/Cart'
+    Cart:
+      type: object
+      properties:
+        _id:
+          type: string
+        products:
+          type: array
+          items:
+            $ref: '#/components/schemas/CartProduct'
+    CartProduct:
+      type: object
+      properties:
+        product:
+          type: string
+        quantity:
+          type: number
+    AddProductToCartRequest:
+      type: object
+      properties:
+        quantity:
+          type: number
+    PurchaseResponse:
+      type: object
+      properties:
+        ticket:
+          type: string
+        failedProducts:
+          type: array
+          items:
+            type: string
+    UpdateCartRequest:
+      type: object
+      properties:
+        products:
+          type: array
+          items:
+            $ref: '#/components/schemas/CartProduct'
+    UpdateProductQuantityRequest:
+      type: object
+      properties:
+        quantity:
+          type: number

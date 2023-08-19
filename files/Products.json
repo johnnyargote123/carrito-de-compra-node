@@ -1,0 +1,336 @@
+[
+  {
+    "id": 1,
+    "title": "xbox",
+    "description": "Con tu consola Xbox Series tendrás entretenimiento asegurado todos los días. Su tecnología fue creada para poner nuevos retos tanto a jugadores principiantes como expertos.",
+    "code": "AAA1",
+    "price": 1500000,
+    "thumbnails": ["http://localhost:8080/images/xbox.png"],
+    "status": true,
+    "stock": 20,
+    "category": "tecnologia"
+  },
+  {
+    "id": 2,
+    "title": "Robot Gundam wing figura de acción",
+    "description": "El traje móvil titular pilotado por el protagonista Heero Yuy de la popular serie Gundam Wing se une a las filas de la serie de figuras de acción avanzadas Robot Spirits. Este ambicioso lanzamiento de Robot Spirits contará con un truco de transformación en el modo Bird de Wing Gundam a través de la simple eliminación de partes de manos intercambiables.",
+    "code": "AAA2",
+    "price": 100000,
+    "thumbnails": ["http://localhost:8080/images/ezgif.com-webp-to.png"],
+    "status": false,
+    "stock": 1,
+    "category": "Figura de colección"
+  },
+  {
+    "id": 3,
+    "title": "Meta Quest 2",
+    "description": "Oculus Quest 2 — Gafas de Realidad Virtual Todo en Uno — 128 GB",
+    "code": "AAA3",
+    "price": 2500000,
+    "thumbnails": [
+      "http://localhost:8080/images/oculus-quest-2-comparison-card.jpg"
+    ],
+    "status": false,
+    "stock": 10,
+    "category": "tecnologia"
+  },
+  {
+    "id": 4,
+    "title": "Apple Studio Display 27' Pulgadas",
+    "description": "Presentamos el monitor Studio Display de Apple. Una envolvente pantalla Retina 5K de 27 pulgadas con cámara de 12 MP con Encuadre Centrado, micrófonos con calidad de estudio y un sistema de sonido de seis parlantes. El compañero ideal de cualquier Mac.",
+    "code": "AAA4",
+    "price": 8389000,
+    "thumbnails": [
+      "http://localhost:8080/images/1679780433628-194253030454-001-750Wx750H.jfif"
+    ],
+    "status": true,
+    "stock": 5,
+    "category": "tecnologia"
+  },
+
+  {
+    "title": "PORTATIL MSI KATANA 17 B13VFK I7 13620H 4060 144HZ IPS",
+    "description": "No te pierdas las impactantes imágenes y la fluida frecuencia de la pantalla IPS de 144 Hz.",
+    "code": "AAA5",
+    "price": 9500000,
+    "thumbnails": [],
+    "status": true,
+    "stock": 20,
+    "category": "tecnologia"
+  },
+
+  {
+    "title": "MSI Stealth-GS66-12UX",
+    "description": "Stealth GS66 cuenta con un diseño delgado y liviano en un elegante chasis de metal negro. Para trabajar durante el día y jugar a la noche.",
+    "code": "AAA6",
+    "price": 8600000,
+    "thumbnails": [],
+    "status": false,
+    "stock": 0,
+    "category": "tecnologia"
+  },
+  {
+    "title": "Samsung Universe 9",
+    "description": "La nueva variante de Samsung que va más allá del Galaxy al Universo",
+    "code": "AAA7",
+    "price": 100000,
+    "thumbnails": [],
+    "status": true,
+    "stock": 6,
+    "category": "tecnologia"
+  },
+  {
+    "title": "Huawei P30",
+    "description": "El nuevo P30 Pro New Edition de Huawei se presentó oficialmente ayer en Alemania y ahora el dispositivo ha llegado al Reino Unido.",
+    "code": "AAA8",
+    "price": 1200000,
+    "thumbnails": [],
+    "status": true,
+    "stock": 30,
+    "category": "tecnologia"
+  },
+
+  {
+    "title": "Samsung Galaxy Book",
+    "description": "Lanzamiento de la computadora portátil Samsung Galaxy Book S (2020) con chip Intel Lakefield y 8 GB de RAM",
+    "code": "AAA9",
+    "price": 2000000,
+    "thumbnails": [],
+    "status": true,
+    "stock": 3,
+    "category": "tecnologia"
+  },
+  {
+    "title": "Microsoft Surface Laptop 4",
+    "description": "Estilo y velocidad. Destaca en las videollamadas HD respaldadas por Studio Mics. Capture ideas en la vibrante pantalla táctil.",
+    "price": 2500000,
+    "code": "AAA10",
+    "thumbnails": [],
+    "status": true,
+    "stock": 50,
+    "category": "tecnologia"
+  },
+  {
+    "title": "Hielo Seco",
+    "description": "Bolsa de hielo seco de 5 kg",
+    "code": "AAA11",
+    "price": 350.99,
+    "thumbnail": "https://example.com/hieloseco.jpg",
+    "status": true,
+    "stock": 50,
+    "category": "Alimentos"
+  },
+  {
+    "title": "Alga Kombu Deshidratada",
+    "description": "100 gramos de alga kombu deshidratada de alta calidad",
+    "code": "AAA12",
+    "price": 120.5,
+    "thumbnail": "https://example.com/kombu.jpg",
+    "status": true,
+    "stock": 20,
+    "category": "Alimentos"
+  },
+  {
+    "title": "Paleta de Helado - Cono Rolo",
+    "description": "Deliciosa paleta de helado sabor vainilla cubierta de chocolate y nueces",
+    "code": "AAA13",
+    "price": 25.75,
+    "thumbnail": "https://example.com/paleta-rolo.jpg",
+    "status": true,
+    "stock": 100,
+    "category": "Alimentos"
+  },
+  {
+    "title": "Pastelito de Butterscotch",
+    "description": "Pastelito de butterscotch recién horneado y relleno de crema",
+    "code": "AAA14",
+    "price": 18.99,
+    "thumbnail": "https://example.com/pastelito-butterscotch.jpg",
+    "status": true,
+    "stock": 75,
+    "category": "Alimentos"
+  },
+  {
+    "title": "Albaricoques en Brandy",
+    "description": "Albaricoques madurados en brandy y envasados en almíbar ligero",
+    "code": "AAA15",
+    "price": 250.0,
+    "thumbnail": "https://example.com/albaricoques-brandy.jpg",
+    "status": true,
+    "stock": 10,
+    "category": "Alimentos"
+  },
+  {
+    "title": "Jícama fresca",
+    "description": "Jícama fresca y crujiente lista para comer",
+    "code": "AAA16",
+    "price": 12.99,
+    "thumbnail": "https://example.com/jicama.jpg",
+    "status": true,
+    "stock": 50,
+    "category": "Alimentos"
+  },
+  {
+    "title": "Rábano encurtido",
+    "description": "Rábano fresco y encurtido en una mezcla de vinagre y especias",
+    "code": "AAA17",
+    "price": 8.5,
+    "thumbnail": "https://example.com/rabano-encurtido.jpg",
+    "status": true,
+    "stock": 30,
+    "category": "Alimentos"
+  },
+
+  {
+    "title": "Aceite de Oliva Virgen Extra",
+    "description": "Aceite de oliva virgen extra de primera calidad, prensado en frío",
+    "code": "AAA18",
+    "price": 15.99,
+    "thumbnail": "https://example.com/aceite-oliva.jpg",
+    "status": true,
+    "stock": 80,
+    "category": "Alimentos"
+  },
+  {
+    "title": "Queso de Cabra",
+    "description": "Queso de cabra artesanal hecho con leche fresca de cabra",
+    "code": "AAA19",
+    "price": 28.5,
+    "thumbnail": "https://example.com/queso-cabra.jpg",
+    "status": true,
+    "stock": 15,
+    "category": "Alimentos"
+  },
+  {
+    "title": "Salsa BBQ",
+    "description": "Salsa BBQ picante y ahumada con un toque de miel",
+    "code": "AAA20",
+    "price": 9.75,
+    "thumbnail": "https://example.com/salsa-bbq.jpg",
+    "status": true,
+    "stock": 40,
+    "category": "Alimentos"
+  },
+  {
+    "title": "Mermelada de Fresa",
+    "description": "Mermelada casera de fresas frescas, sin conservantes ni aditivos",
+    "code": "AAA21",
+    "price": 7.99,
+    "thumbnail": "https://example.com/mermelada-fresa.jpg",
+    "status": true,
+    "stock": 25,
+    "category": "Alimentos"
+  },
+  {
+    "title": "Trufas de Chocolate",
+    "description": "Trufas de chocolate negro con un toque de licor y cubiertas de cacao en polvo",
+    "code": "AAA22",
+    "price": 20.25,
+    "thumbnail": "https://example.com/trufas-chocolate.jpg",
+    "status": true,
+    "stock": 35,
+    "category": "Alimentos"
+  },
+  {
+    "title": "Crema de Avellanas",
+    "description": "Crema de avellanas casera hecha con avellanas tostadas y cacao",
+    "code": "AAA23",
+    "price": 12.5,
+    "thumbnail": "https://example.com/crema-avellanas.jpg",
+    "status": true,
+    "stock": 50,
+    "category": "Alimentos"
+  },
+  {
+    "title": "Especias para Carne",
+    "description": "Mezcla de especias para carne con un toque ahumado y picante",
+    "code": "AAA24",
+    "price": 6.99,
+    "thumbnail": "https://example.com/especias-carne.jpg",
+    "status": true,
+    "stock": 60,
+    "category": "Alimentos"
+  },
+  {
+    "title": "Halo Infinite",
+    "description": "La nueva entrega de la popular saga de FPS exclusiva de Xbox",
+    "code": "AAA25",
+    "price": 59.99,
+    "thumbnail": "https://example.com/halo-infinite.jpg",
+    "status": false,
+    "stock": 100,
+    "category": "Videojuegos"
+  },
+  {
+    "title": "Forza Horizon 5",
+    "description": "El juego de carreras más esperado de Xbox, con un mundo abierto increíblemente detallado",
+    "code": "AAA26",
+    "price": 69.99,
+    "thumbnail": "https://example.com/forza-horizon-5.jpg",
+    "status": true,
+    "stock": 75,
+    "category": "Videojuegos"
+  },
+  {
+    "title": "Gears 5",
+    "description": "El último título de la saga Gears of War, con modo multijugador mejorado y modo campaña emocionante",
+    "code": "AAA27",
+    "price": 29.99,
+    "thumbnail": "https://example.com/gears-5.jpg",
+    "status": false,
+    "stock": 50,
+    "category": "Videojuegos"
+  },
+  {
+    "title": "Sea of Thieves",
+    "description": "Un juego de aventuras en el que puedes formar equipo con tus amigos y explorar el mundo pirata",
+    "code": "AAA28",
+    "price": 39.99,
+    "thumbnail": "https://example.com/sea-of-thieves.jpg",
+    "status": true,
+    "stock": 60,
+    "category": "Videojuegos"
+  },
+  {
+    "title": "Minecraft",
+    "description": "Un clásico de los videojuegos, en el que puedes crear y explorar mundos infinitos con tus amigos",
+    "code": "AAA29",
+    "price": 19.99,
+    "thumbnail": "https://example.com/minecraft.jpg",
+    "status": true,
+    "stock": 150,
+    "category": "Videojuegos"
+  },
+  {
+    "title": "Ori and the Will of the Wisps",
+    "description": "Un hermoso juego de plataformas con una emocionante historia y una banda sonora impresionante",
+    "code": "AAA30",
+    "price": 24.99,
+    "thumbnail": "https://example.com/ori-and-the-will-of-the-wisps.jpg",
+    "status": true,
+    "stock": 30,
+    "category": "Videojuegos"
+  },
+  {
+    "title": "Fable Anniversary",
+    "description": "La remasterización del clásico RPG de acción de Xbox original, con gráficos mejorados y contenido adicional",
+    "code": "AAA31",
+    "price": 34.99,
+    "thumbnail": "https://example.com/fable-anniversary.jpg",
+    "status": true,
+    "stock": 25,
+    "category": "Videojuegos"
+  },
+  {
+    "title": "Dead Rising 4",
+    "description": "Un juego de acción en el que debes sobrevivir a una horda de zombis con armas improvisadas",
+    "code": "AAA32",
+    "price": 19.0,
+    "thumbnail": "https://example.com/fable-anniversary.jpg",
+    "status": false,
+    "stock": 25,
+    "category": "Videojuegos"
+  }
+
+
+]

@@ -1,0 +1,271 @@
+paths:
+  /api/products:
+    get:
+      summary: Get all products
+      description: Retrieves a list of all products.
+      tags:
+        - Products
+      parameters:
+        - in: query
+          name: limit
+          schema:
+            type: integer
+            format: int32
+          description: Maximum number of products to return (default 10)
+        - in: query
+          name: page
+          schema:
+            type: integer
+            format: int32
+          description: Page number for pagination (default 1)
+        - in: query
+          name: category
+          schema:
+            type: string
+          description: Filter products by category
+        - in: query
+          name: status
+          schema:
+            type: string
+          description: Filter products by status
+        - in: query
+          name: sort
+          schema:
+            type: string
+          description: Sort products by price ('asc' or 'desc')
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Product'
+
+    post:
+      summary: Create a new product
+      description: Creates a new product.
+      tags:
+        - Products
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ProductInput'
+            example:
+              id: "1234567890"
+              title: "Sample Product"
+              description: "This is a sample product."
+              code: "SAMPLE123"
+              price: 10.99
+              thumbnail: "https://example.com/sample.jpg"
+              status: true
+              stock: 100
+              category: "Sample Category"
+              owner: "admin"
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Product'
+              examples:
+                application/json:
+                  value:
+                    status: Success
+                    message: "Product created: undefined"
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+      security:
+        - apiKey: []
+
+  /api/products/{id}:
+    get:
+      summary: Get a product by ID
+      description: Retrieves a product by its ID.
+      tags:
+        - Products
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: string
+          required: true
+          description: Product ID
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Product'
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+    put:
+      summary: Update a product
+      description: Updates a product by its ID.
+      tags:
+        - Products
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: string
+          required: true
+          description: Product ID
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ProductInput'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Product'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+      security:
+        - apiKey: []
+
+    delete:
+      summary: Delete a product
+      description: Deletes a product by its ID.
+      tags:
+        - Products
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: string
+          required: true
+          description: Product ID
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Product'
+              examples:
+                application/json:
+                  value:
+                    status: Success
+                    message: "Product deleted successfully"
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+      security:
+        - apiKey: []
+
+components:
+  schemas:
+    Product:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Product ID
+        title:
+          type: string
+          description: Product title
+        description:
+          type: string
+          description: Product description
+        code:
+          type: string
+          description: Product code
+        price:
+          type: number
+          description: Product price
+        thumbnail:
+          type: string
+          description: Product thumbnail URL
+        status:
+          type: boolean
+          description: Product status
+        stock:
+          type: number
+          description: Product stock quantity
+        category:
+          type: string
+          description: Product category
+        owner:
+          type: string
+          description: Product owner
+
+    ProductInput:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Product ID
+        title:
+          type: string
+          description: Product title
+        description:
+          type: string
+          description: Product description
+        code:
+          type: string
+          description: Product code
+        price:
+          type: number
+          description: Product price
+        thumbnail:
+          type: string
+          description: Product thumbnail URL
+        status:
+          type: boolean
+          description: Product status
+        stock:
+          type: number
+          description: Product stock quantity
+        category:
+          type: string
+          description: Product category
+        owner:
+          type: string
+          description: Product owner
+
+    Error:
+      type: object
+      properties:
+        error:
+          type: string
+          description: Error message
+
+securitySchemes:
+  apiKey:
+    type: apiKey
+    in: header
+    name: Authorization

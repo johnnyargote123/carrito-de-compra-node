@@ -1,0 +1,38 @@
+<div class="container-general">
+  <h1>Producto (socket)</h1>
+  <section>
+    <div id="products-list" class="contianer-section-products-list">
+    {{#each products$}}
+      <div class="container-card-product" id="product-{{this.id}}" >
+        <div class="box-card-product">
+          <div class="contianer-tags">
+            <div class="tag-id">
+              <p>ID {{this.id}}</p>
+            </div>
+
+            <div class="tag-status">
+              <p>Status {{this.status}}</p>
+            </div>
+          </div>
+
+          <div class="container-img">
+            <img src="{{this.thumbnails}}" alt="imagen {{this.title}}" />
+          </div>
+          <div class="container-stock">
+            <p style="margin: 0px"> <b>Stock:</b> {{this.stock}}</p>
+          </div>
+          <h1>{{this.category}}</h1>
+          <h2>{{this.title}}</h2>
+
+          <p> <b>Description:</b> {{this.description}}</p>
+          <p> <b>Code:</b> {{this.code}}</p>
+          <p> <b>Price:</b> ${{this.price}}</p>
+        </div>
+      </div>
+    {{/each}}
+    </div>
+  </section>
+
+</div>
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/index.js"></script>

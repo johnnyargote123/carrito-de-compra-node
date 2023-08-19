@@ -1,0 +1,30 @@
+<div>
+    <h1>User Details</h1>
+    <p>Name: {{user.full_name}}</p>
+    <p>Email: {{user.email}}</p>
+    <p  id="roleDisplay">Role: {{user.rol}}</p>
+
+    <form id="changeRoleForm">
+        <div  class="container-change-user">
+        <label for="role">Change Role:</label>
+        <select name="role" id="role">
+            <option value="USER">USER</option>
+            <option value="ADMIN">ADMIN</option>
+            <option value="PREMIUM">PREMIUM</option>
+        </select>
+        <p>to</p>
+        <input type="email" id="changeUserEmail" name="changeUserEmail" required>
+        <button type="submit" class="change-rol-user" >Change Role</button>
+        </div>
+    </form>
+
+<form id="deleteUserForm">
+    <label for="deleteUserEmail">Email to Delete:</label>
+    <input type="email" id="deleteUserEmail" name="deleteUserEmail" required>
+    <button type="submit">Delete User</button>
+</form>
+
+    <a href="/">Back to home</a>
+</div>
+
+  <script src="/js/control-user.js"></script>

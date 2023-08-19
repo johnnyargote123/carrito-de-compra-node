@@ -1,0 +1,22 @@
+<div>
+  <button onclick="goToHome()">Volver al home</button>
+</div>
+
+{{#each productsId$}}
+  <li>
+    <h2>Cart ID: {{_id}}</h2>
+    <ul>
+      {{#each products}}
+        <li>
+          <p>Product group ID: {{_id}}</p>
+          <p>Product ID: {{product}}</p>
+          <p>Quantity: {{quantity}}</p>
+        </li>
+      {{/each}}
+    </ul>
+    <button class="buy-cart-button" data-cart-id="{{_id}}">Comprar productos</button> <!-- Agrega el data-cart-id -->
+  </li>
+{{/each}}
+
+
+  <script src="/js/cart.js"></script>

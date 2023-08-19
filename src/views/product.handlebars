@@ -1,0 +1,17 @@
+{{#if productsId$}}
+    <button class="open-product-page" onclick="goToHome()">Volver al home</button>
+    <div class="container-img">
+    <img src="{{productsId$.thumbnails}}" alt="imagen {{productsId$.title}}" />
+    </div>
+    <p style="margin: 0px"> <b>Stock:</b> {{productsId$.stock}}</p>
+
+    <h1>{{productsId$.category}}</h1>
+    <h2>{{productsId$.title}}</h2>
+
+    <p> <b>Description:</b> {{productsId$.description}}</p>
+    <p> <b>Code:</b> {{productsId$.code}}</p>
+    <p> <b>Price:</b> ${{productsId$.price}}</p>
+    <button class="add-to-cart-button" data-cart-id="{{user.cart}}">Agregar al carrito</button>
+{{/if}}
+
+<script src="/js/product.js"></script>
