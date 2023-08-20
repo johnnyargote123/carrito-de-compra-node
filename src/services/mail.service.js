@@ -2,7 +2,7 @@ import config from "../config/config.js";
 import nodemailer from "nodemailer";
 import { v4 as uuidv4 } from "uuid";
 import moment from "moment"; 
-const { service, port, user, password } = config;
+const { service, portMail, user, password } = config;
 class MailService {
   constructor() {
     this.passwordResetRequests = new Map()
@@ -11,7 +11,7 @@ class MailService {
     try {
       const transporter = nodemailer.createTransport({
         service: service,
-        port: port,
+        port: portMail,
         auth: {
           user: user,
           pass: password,
@@ -44,7 +44,7 @@ class MailService {
       });
       const transporter = nodemailer.createTransport({
         service: service,
-        port: port,
+        port: portMail,
         auth: {
           user: user,
           pass: password,
