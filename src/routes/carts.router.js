@@ -23,7 +23,7 @@ router.post("/", authorizeUser(["USER"]), createCart);
 router.post("/:cid/product/:pid", authorizeUser(["USER", "PREMIUM"]), addProductToCart);
 
 
-router.post('/:cid/purchase',authorizeUser(["USER"]), purchaseCart);
+router.post('/:cid/purchase',authorizeUser(["USER", "PREMIUM" ]), purchaseCart);
 
 router.delete("/:cid/products/:pid", removeProductFromCart);
 
