@@ -35,7 +35,7 @@ class MailService {
   async sendPasswordResetEmail(email) {
     try {
       const token = uuidv4()
-      const resetLink = `http://localhost:8080/reset-password/${token}`
+      const resetLink = `https://carrito-de-compra-node-production.up.railway.app/reset-password/${token}`
       const expirationTime = moment().add(1, "hour")
 
       this.passwordResetRequests.set(token, {
