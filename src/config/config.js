@@ -27,7 +27,7 @@ const config = {
   callbackUrl: process.env.CALLBACK_URL,
   persistence: persistenceUpdate.toUpperCase() ,
   service: process.env.SERVICE,
-  port: process.env.PORT,
+  portMail: process.env.PORTMAIL,
   user: process.env.USER,
   password: process.env.PASSWORD,
   environment: environmentUpdate,
