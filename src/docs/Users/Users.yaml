@@ -45,6 +45,72 @@ paths:
         '500':
           description: Internal server error.
 
+/api/users/{uid}/documents:
+  post:
+    summary: Update user document status
+    tags:
+      - Users
+    parameters:
+      - name: uid
+        in: path
+        description: User's email address
+        required: true
+        schema:
+          type: string
+          format: email
+    requestBody:
+      required: true
+      content:
+        multipart/form-data:
+          schema:
+            type: object
+            properties:
+              document:
+                type: array
+                items:
+                  type: string
+                  format: binary
+              profile:
+                type: string
+                format: binary
+            required:
+              - document
+              - profile
+            example:
+              document: [PDF, JPG]
+              profile: PDF
+    responses:
+      '200':
+        description: Document status updated successfully
+      '500':
+        description: Internal server error.
+    description: |
+      This endpoint allows you to update the document status for a user.
+      The `document` field should contain an array of document types such as PDF and JPG,
+      Names for the uploaded documents must be (`Comprobante de domicilio`, `Comprobante de estado de cuenta` y `Identificacion` ),
+      while the `profile` field should contain a single document type like JPG.
+
+
+  /api/users/{userId}/add-cart:
+    post:
+      summary: Add cart to user
+      tags:
+        - Users
+      parameters:
+        - name: userId
+          in: path
+          description: User's ID
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Cart added successfully
+        '404':
+          description: User not found in the database.
+        '500':
+          description: Internal server error.
+
 components:
   schemas:
     User:
@@ -64,7 +130,6 @@ components:
         role:
           type: string
 
-  examples:
     UserExample:
       value:
         email: john.doe@example.com
