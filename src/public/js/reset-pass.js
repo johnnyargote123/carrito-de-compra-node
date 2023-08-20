@@ -29,7 +29,7 @@ form.addEventListener("submit", async (e) => {
     const redirectButton = document.getElementById("redirectButton");
     redirectButton.addEventListener("click", () => {
       // Redirect to another page
-      window.location.href = "http://localhost:8080/login";
+      window.location.href = "https://carrito-de-compra-node-production.up.railway.app/login";
     });
 
     

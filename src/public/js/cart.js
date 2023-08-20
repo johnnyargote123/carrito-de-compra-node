@@ -10,7 +10,7 @@ buyButton.addEventListener('click', () => {
   console.log(cartId)
 
   // Construye la URL completa con el _id
-  const url = `http://localhost:8080/api/carts/${cartId}/purchase`;
+  const url = `https://carrito-de-compra-node-production.up.railway.app/api/carts/${cartId}/purchase`;
 
   // Realiza la solicitud POST
   fetch(url, {

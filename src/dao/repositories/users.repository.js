@@ -65,7 +65,7 @@ export class UserRepository {
         if (!existingDocument) {
           const updatedDocument = {
             name: doc.name,
-            reference: `http://localhost:8080/${doc.fieldname}/${doc.reference}`,
+            reference: `https://carrito-de-compra-node-production.up.railway.app/${doc.fieldname}/${doc.reference}`,
           };
   
           await sessionMongo.updateUserByEmail(uid, {
@@ -81,7 +81,7 @@ export class UserRepository {
         if (!existingProfile) {
           const updatedProfile = {
             name: profile.name,
-            reference: `http://localhost:8080/${profile.fieldname}/${profile.reference}`,
+            reference: `https://carrito-de-compra-node-production.up.railway.app/${profile.fieldname}/${profile.reference}`,
           };
   
           await sessionMongo.updateUserByEmail(uid, {

@@ -41,7 +41,7 @@ deleteUserForm.addEventListener("submit", async (event) => {
     event.preventDefault();
 
     const userEmailToDelete = document.getElementById('deleteUserEmail').value;
-    const url = `http://localhost:8080/api/sessions/users/${encodeURIComponent(userEmailToDelete)}`;
+    const url = `https://carrito-de-compra-node-production.up.railway.app/api/sessions/users/${encodeURIComponent(userEmailToDelete)}`;
 
     try {
         const response = await fetch(url, {

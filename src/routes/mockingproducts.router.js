@@ -12,7 +12,7 @@ router.get('/mockingproducts', (req, res) => {
         description: faker.lorem.paragraph(),
         code: `AAA${i + 1}`,
         price: faker.commerce.price(),
-        thumbnails: [`http://localhost:8080/images/product${i + 1}.png`],
+        thumbnails: [`https://carrito-de-compra-node-production.up.railway.app/images/product${i + 1}.png`],
         status: true,
         stock: faker.datatype.number({ min: 1, max: 100 }),
         category: faker.commerce.department(),

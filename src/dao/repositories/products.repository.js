@@ -75,7 +75,7 @@ import { productDAO } from "../factory.js";
       const thumbnails = [];
       if (files) {
         files.forEach((file) => {
-          const imageUrl = `http://localhost:8080/images/${file.filename}`;
+          const imageUrl = `https://carrito-de-compra-node-production.up.railway.app/images/${file.filename}`;
           thumbnails.push(imageUrl);
         });
       }

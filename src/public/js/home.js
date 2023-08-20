@@ -30,7 +30,7 @@ addToCartButtons.forEach((button) => {
 
     console.log(cartId)
     const quantity = 1; // cantidad de productos a agregar al carrito
-    const url = `http://localhost:8080/api/carts/${cartId}/product/${productId}`;
+    const url = `https://carrito-de-compra-node-production.up.railway.app/api/carts/${cartId}/product/${productId}`;
     
     fetch(url, {
       method: "POST",
